@@ -6,10 +6,12 @@ pipeline {
                 withAWS(credentials:'aws-static') {
                     s3Upload(file:'index.html', bucket:'jenkins-static-site', path:'./index.html')
                 }
-                tidy_step {
-                    tidy -q -e *.html        
-                }
             }
+        }
+            stage('Linting') { 
+                steps {
+                    tidy -q -e *.html
+                }
         }
     }
 }
