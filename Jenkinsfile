@@ -7,6 +7,9 @@ pipeline {
                     s3Upload(file:'index.html', bucket:'jenkins-static-site', path:'./index.html')
                 }
             }
+            steps {
+                tidy -q -e *.html
+            }
         }
     }
 }
