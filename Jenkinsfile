@@ -8,10 +8,10 @@ pipeline {
                 }
             }
         }
-            stage('Linting') { 
-                steps {
-                    tidy -q -e *.html
-                }
+        stage('Linting') { 
+            steps {
+                tidy -q -e *.html
+            }
         }
     }
 }
