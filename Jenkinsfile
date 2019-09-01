@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Linting') { 
             steps {
-                tidy -q -e *.html
+                sh 'echo "Hello World!"'
             }
         }
     }
